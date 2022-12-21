@@ -3,6 +3,7 @@ import 'package:pogodynka/features/src/feature/home/widgets/city_weather_card.da
 import 'package:pogodynka/features/src/feature/home/widgets/weather_condition_card.dart';
 import 'package:pogodynka/features/src/feature/home/widgets/weather_condition_content.dart';
 import 'package:pogodynka/features/src/feature/home/widgets/weather_main_content.dart';
+import 'package:pogodynka/features/src/themes/app_colors.dart';
 import 'package:pogodynka/features/src/widgets/line_separator.dart';
 import 'package:pogodynka/services/models/weather/weather.dart';
 
@@ -21,6 +22,8 @@ class HomeView extends StatelessWidget {
     required this.pressure,
     required this.wind,
     required this.onCityPressed,
+    required this.onRefreshPressed,
+    required this.isLoading,
     this.cityWeather,
   }) : super(key: key);
 
@@ -36,7 +39,9 @@ class HomeView extends StatelessWidget {
   final int clouds;
   final int pressure;
   final VoidCallback? onCityPressed;
+  final VoidCallback onRefreshPressed;
   final Weather? cityWeather;
+  final bool isLoading;
 
   factory HomeView.empty() =>  HomeView(
         cityName: 'Twoja lokalizacja',
@@ -51,6 +56,8 @@ class HomeView extends StatelessWidget {
         pressure: 0,
         wind: 0,
         onCityPressed: (){},
+        onRefreshPressed: (){},
+        isLoading: true,
       );
 
   @override
@@ -67,6 +74,8 @@ class HomeView extends StatelessWidget {
           maxTemperature: maxTemperature,
           feelTemperature: feelTemperature,
           day: day,
+          onRefreshPressed: onRefreshPressed,
+          isLoading: isLoading,
         ),
         const SizedBox(height: 25,),
         WeatherConditionCard(
@@ -74,7 +83,7 @@ class HomeView extends StatelessWidget {
               WeatherConditionContent(
                 icon: const Icon(
                   Icons.water_drop_sharp,
-                  color: Colors.blue,
+                  color: AppColors.appBlue,
                 ),
                 title: 'Wilgotność',
                 value: '$humidity%',
@@ -82,7 +91,7 @@ class HomeView extends StatelessWidget {
               WeatherConditionContent(
                 icon: const Icon(
                   Icons.cloud,
-                  color: Colors.grey,
+                  color: AppColors.almostWhite,
                 ),
                 title: 'Zachmurzenie',
                 value: '$clouds%',
@@ -95,7 +104,7 @@ class HomeView extends StatelessWidget {
               WeatherConditionContent(
                 icon: const Icon(
                   Icons.wind_power,
-                  color: Colors.white70,
+                  color: AppColors.almostWhite,
                   size: 25,
                 ),
                 title: 'Wiatr',

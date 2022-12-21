@@ -4,7 +4,7 @@ import 'package:pogodynka/features/src/feature/home/bloc/home_bloc.dart';
 import 'package:pogodynka/features/src/feature/home/view/home_view.dart';
 import 'package:pogodynka/features/src/feature/home/widgets/city_weather_bottom_sheet.dart';
 import 'package:pogodynka/features/src/injection/injection.dart';
-import 'package:pogodynka/features/src/widgets/app_text_input.dart';
+import 'package:pogodynka/features/src/themes/app_colors.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -28,14 +28,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        title: Text('Pogodynka'),
-        backgroundColor: Color(0xFF243657),
+        title: const Text('Pogodynka'),
+        backgroundColor: const Color(0xFF243657),
         elevation: 0,
       ),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        color: Color(0xFF243657),
+        color: AppColors.backgroundColor,
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
@@ -46,19 +46,21 @@ class _HomePageState extends State<HomePage> {
                   return HomeView.empty();
                 } else {
                   return HomeView(
-                    cityName: state.weather!.cityName,
-                    temperature: state.weather!.temperature,
-                    minTemperature: state.weather!.minTemp,
-                    maxTemperature: state.weather!.maxTemp,
-                    feelTemperature: state.weather!.feelTemp,
-                    icon: state.getWeatherIcon(state.weather!),
+                    cityName: state.finalWeather!.cityName!,
+                    temperature: state.finalWeather!.temperature!,
+                    minTemperature: state.finalWeather!.minTemp!,
+                    maxTemperature: state.finalWeather!.maxTemp!,
+                    feelTemperature: state.finalWeather!.feelTemp!,
+                    icon: state.getWeatherIcon(state.finalWeather!),
                     day: state.getDay(),
-                    humidity: state.weather!.humidity,
-                    wind: state.weather!.wind,
-                    pressure: state.weather!.pressure,
-                    clouds: state.weather!.clouds,
+                    humidity: state.finalWeather!.humidity!,
+                    wind: state.finalWeather!.wind!,
+                    pressure: state.finalWeather!.pressure!,
+                    clouds: state.finalWeather!.clouds!,
                     onCityPressed: _onCityPressed,
+                    onRefreshPressed: _onRefreshedPressed,
                     cityWeather: state.cityWeather,
+                    isLoading: state.isLoading,
                   );
                 }
               },
@@ -82,17 +84,19 @@ class _HomePageState extends State<HomePage> {
             onCityNameChange: _onCityNameChanged,
             onCheckForCityPressed: _onCheckForCityPressed,
           );
-        }
-        );
+        });
   }
 
   void _onCityNameChanged(String value) => setState(() {
-    cityName = value;
-  });
+        cityName = value;
+      });
 
-  void _onCheckForCityPressed(){
+  void _onCheckForCityPressed() {
     _bloc.add(HomeEvent.getCityWeather(cityName));
     Navigator.pop(context);
   }
-}
 
+  void _onRefreshedPressed(){
+    _bloc.add(const HomeEvent.refreshWeather());
+  }
+}

@@ -19,18 +19,21 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function() refreshWeather,
     required TResult Function(String cityName) getCityWeather,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
+    TResult? Function()? refreshWeather,
     TResult? Function(String cityName)? getCityWeather,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? refreshWeather,
     TResult Function(String cityName)? getCityWeather,
     required TResult orElse(),
   }) =>
@@ -38,18 +41,21 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initialize value) initialize,
+    required TResult Function(RefreshWeather value) refreshWeather,
     required TResult Function(GetCityWeather value) getCityWeather,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initialize value)? initialize,
+    TResult? Function(RefreshWeather value)? refreshWeather,
     TResult? Function(GetCityWeather value)? getCityWeather,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initialize value)? initialize,
+    TResult Function(RefreshWeather value)? refreshWeather,
     TResult Function(GetCityWeather value)? getCityWeather,
     required TResult orElse(),
   }) =>
@@ -112,6 +118,7 @@ class _$Initialize implements Initialize {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function() refreshWeather,
     required TResult Function(String cityName) getCityWeather,
   }) {
     return initialize();
@@ -121,6 +128,7 @@ class _$Initialize implements Initialize {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
+    TResult? Function()? refreshWeather,
     TResult? Function(String cityName)? getCityWeather,
   }) {
     return initialize?.call();
@@ -130,6 +138,7 @@ class _$Initialize implements Initialize {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? refreshWeather,
     TResult Function(String cityName)? getCityWeather,
     required TResult orElse(),
   }) {
@@ -143,6 +152,7 @@ class _$Initialize implements Initialize {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initialize value) initialize,
+    required TResult Function(RefreshWeather value) refreshWeather,
     required TResult Function(GetCityWeather value) getCityWeather,
   }) {
     return initialize(this);
@@ -152,6 +162,7 @@ class _$Initialize implements Initialize {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initialize value)? initialize,
+    TResult? Function(RefreshWeather value)? refreshWeather,
     TResult? Function(GetCityWeather value)? getCityWeather,
   }) {
     return initialize?.call(this);
@@ -161,6 +172,7 @@ class _$Initialize implements Initialize {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initialize value)? initialize,
+    TResult Function(RefreshWeather value)? refreshWeather,
     TResult Function(GetCityWeather value)? getCityWeather,
     required TResult orElse(),
   }) {
@@ -173,6 +185,114 @@ class _$Initialize implements Initialize {
 
 abstract class Initialize implements HomeEvent {
   const factory Initialize() = _$Initialize;
+}
+
+/// @nodoc
+abstract class _$$RefreshWeatherCopyWith<$Res> {
+  factory _$$RefreshWeatherCopyWith(
+          _$RefreshWeather value, $Res Function(_$RefreshWeather) then) =
+      __$$RefreshWeatherCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$RefreshWeatherCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res, _$RefreshWeather>
+    implements _$$RefreshWeatherCopyWith<$Res> {
+  __$$RefreshWeatherCopyWithImpl(
+      _$RefreshWeather _value, $Res Function(_$RefreshWeather) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$RefreshWeather implements RefreshWeather {
+  const _$RefreshWeather();
+
+  @override
+  String toString() {
+    return 'HomeEvent.refreshWeather()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _$RefreshWeather);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialize,
+    required TResult Function() refreshWeather,
+    required TResult Function(String cityName) getCityWeather,
+  }) {
+    return refreshWeather();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initialize,
+    TResult? Function()? refreshWeather,
+    TResult? Function(String cityName)? getCityWeather,
+  }) {
+    return refreshWeather?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialize,
+    TResult Function()? refreshWeather,
+    TResult Function(String cityName)? getCityWeather,
+    required TResult orElse(),
+  }) {
+    if (refreshWeather != null) {
+      return refreshWeather();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(Initialize value) initialize,
+    required TResult Function(RefreshWeather value) refreshWeather,
+    required TResult Function(GetCityWeather value) getCityWeather,
+  }) {
+    return refreshWeather(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(Initialize value)? initialize,
+    TResult? Function(RefreshWeather value)? refreshWeather,
+    TResult? Function(GetCityWeather value)? getCityWeather,
+  }) {
+    return refreshWeather?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(Initialize value)? initialize,
+    TResult Function(RefreshWeather value)? refreshWeather,
+    TResult Function(GetCityWeather value)? getCityWeather,
+    required TResult orElse(),
+  }) {
+    if (refreshWeather != null) {
+      return refreshWeather(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RefreshWeather implements HomeEvent {
+  const factory RefreshWeather() = _$RefreshWeather;
 }
 
 /// @nodoc
@@ -241,6 +361,7 @@ class _$GetCityWeather implements GetCityWeather {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialize,
+    required TResult Function() refreshWeather,
     required TResult Function(String cityName) getCityWeather,
   }) {
     return getCityWeather(cityName);
@@ -250,6 +371,7 @@ class _$GetCityWeather implements GetCityWeather {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initialize,
+    TResult? Function()? refreshWeather,
     TResult? Function(String cityName)? getCityWeather,
   }) {
     return getCityWeather?.call(cityName);
@@ -259,6 +381,7 @@ class _$GetCityWeather implements GetCityWeather {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialize,
+    TResult Function()? refreshWeather,
     TResult Function(String cityName)? getCityWeather,
     required TResult orElse(),
   }) {
@@ -272,6 +395,7 @@ class _$GetCityWeather implements GetCityWeather {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(Initialize value) initialize,
+    required TResult Function(RefreshWeather value) refreshWeather,
     required TResult Function(GetCityWeather value) getCityWeather,
   }) {
     return getCityWeather(this);
@@ -281,6 +405,7 @@ class _$GetCityWeather implements GetCityWeather {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(Initialize value)? initialize,
+    TResult? Function(RefreshWeather value)? refreshWeather,
     TResult? Function(GetCityWeather value)? getCityWeather,
   }) {
     return getCityWeather?.call(this);
@@ -290,6 +415,7 @@ class _$GetCityWeather implements GetCityWeather {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(Initialize value)? initialize,
+    TResult Function(RefreshWeather value)? refreshWeather,
     TResult Function(GetCityWeather value)? getCityWeather,
     required TResult orElse(),
   }) {
@@ -311,7 +437,10 @@ abstract class GetCityWeather implements HomeEvent {
 
 /// @nodoc
 mixin _$HomeState {
-  Weather? get weather => throw _privateConstructorUsedError;
+  Weather? get openWeather => throw _privateConstructorUsedError;
+  Weather? get meteoWether => throw _privateConstructorUsedError;
+  Weather? get tomorrowWeather => throw _privateConstructorUsedError;
+  Weather? get finalWeather => throw _privateConstructorUsedError;
   Weather? get cityWeather => throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
   Error? get error => throw _privateConstructorUsedError;
@@ -327,9 +456,18 @@ abstract class $HomeStateCopyWith<$Res> {
       _$HomeStateCopyWithImpl<$Res, HomeState>;
   @useResult
   $Res call(
-      {Weather? weather, Weather? cityWeather, bool isLoading, Error? error});
+      {Weather? openWeather,
+      Weather? meteoWether,
+      Weather? tomorrowWeather,
+      Weather? finalWeather,
+      Weather? cityWeather,
+      bool isLoading,
+      Error? error});
 
-  $WeatherCopyWith<$Res>? get weather;
+  $WeatherCopyWith<$Res>? get openWeather;
+  $WeatherCopyWith<$Res>? get meteoWether;
+  $WeatherCopyWith<$Res>? get tomorrowWeather;
+  $WeatherCopyWith<$Res>? get finalWeather;
   $WeatherCopyWith<$Res>? get cityWeather;
 }
 
@@ -346,15 +484,30 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weather = freezed,
+    Object? openWeather = freezed,
+    Object? meteoWether = freezed,
+    Object? tomorrowWeather = freezed,
+    Object? finalWeather = freezed,
     Object? cityWeather = freezed,
     Object? isLoading = null,
     Object? error = freezed,
   }) {
     return _then(_value.copyWith(
-      weather: freezed == weather
-          ? _value.weather
-          : weather // ignore: cast_nullable_to_non_nullable
+      openWeather: freezed == openWeather
+          ? _value.openWeather
+          : openWeather // ignore: cast_nullable_to_non_nullable
+              as Weather?,
+      meteoWether: freezed == meteoWether
+          ? _value.meteoWether
+          : meteoWether // ignore: cast_nullable_to_non_nullable
+              as Weather?,
+      tomorrowWeather: freezed == tomorrowWeather
+          ? _value.tomorrowWeather
+          : tomorrowWeather // ignore: cast_nullable_to_non_nullable
+              as Weather?,
+      finalWeather: freezed == finalWeather
+          ? _value.finalWeather
+          : finalWeather // ignore: cast_nullable_to_non_nullable
               as Weather?,
       cityWeather: freezed == cityWeather
           ? _value.cityWeather
@@ -373,13 +526,49 @@ class _$HomeStateCopyWithImpl<$Res, $Val extends HomeState>
 
   @override
   @pragma('vm:prefer-inline')
-  $WeatherCopyWith<$Res>? get weather {
-    if (_value.weather == null) {
+  $WeatherCopyWith<$Res>? get openWeather {
+    if (_value.openWeather == null) {
       return null;
     }
 
-    return $WeatherCopyWith<$Res>(_value.weather!, (value) {
-      return _then(_value.copyWith(weather: value) as $Val);
+    return $WeatherCopyWith<$Res>(_value.openWeather!, (value) {
+      return _then(_value.copyWith(openWeather: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $WeatherCopyWith<$Res>? get meteoWether {
+    if (_value.meteoWether == null) {
+      return null;
+    }
+
+    return $WeatherCopyWith<$Res>(_value.meteoWether!, (value) {
+      return _then(_value.copyWith(meteoWether: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $WeatherCopyWith<$Res>? get tomorrowWeather {
+    if (_value.tomorrowWeather == null) {
+      return null;
+    }
+
+    return $WeatherCopyWith<$Res>(_value.tomorrowWeather!, (value) {
+      return _then(_value.copyWith(tomorrowWeather: value) as $Val);
+    });
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $WeatherCopyWith<$Res>? get finalWeather {
+    if (_value.finalWeather == null) {
+      return null;
+    }
+
+    return $WeatherCopyWith<$Res>(_value.finalWeather!, (value) {
+      return _then(_value.copyWith(finalWeather: value) as $Val);
     });
   }
 
@@ -404,10 +593,22 @@ abstract class _$$_HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {Weather? weather, Weather? cityWeather, bool isLoading, Error? error});
+      {Weather? openWeather,
+      Weather? meteoWether,
+      Weather? tomorrowWeather,
+      Weather? finalWeather,
+      Weather? cityWeather,
+      bool isLoading,
+      Error? error});
 
   @override
-  $WeatherCopyWith<$Res>? get weather;
+  $WeatherCopyWith<$Res>? get openWeather;
+  @override
+  $WeatherCopyWith<$Res>? get meteoWether;
+  @override
+  $WeatherCopyWith<$Res>? get tomorrowWeather;
+  @override
+  $WeatherCopyWith<$Res>? get finalWeather;
   @override
   $WeatherCopyWith<$Res>? get cityWeather;
 }
@@ -423,15 +624,30 @@ class __$$_HomeStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? weather = freezed,
+    Object? openWeather = freezed,
+    Object? meteoWether = freezed,
+    Object? tomorrowWeather = freezed,
+    Object? finalWeather = freezed,
     Object? cityWeather = freezed,
     Object? isLoading = null,
     Object? error = freezed,
   }) {
     return _then(_$_HomeState(
-      weather: freezed == weather
-          ? _value.weather
-          : weather // ignore: cast_nullable_to_non_nullable
+      openWeather: freezed == openWeather
+          ? _value.openWeather
+          : openWeather // ignore: cast_nullable_to_non_nullable
+              as Weather?,
+      meteoWether: freezed == meteoWether
+          ? _value.meteoWether
+          : meteoWether // ignore: cast_nullable_to_non_nullable
+              as Weather?,
+      tomorrowWeather: freezed == tomorrowWeather
+          ? _value.tomorrowWeather
+          : tomorrowWeather // ignore: cast_nullable_to_non_nullable
+              as Weather?,
+      finalWeather: freezed == finalWeather
+          ? _value.finalWeather
+          : finalWeather // ignore: cast_nullable_to_non_nullable
               as Weather?,
       cityWeather: freezed == cityWeather
           ? _value.cityWeather
@@ -453,11 +669,23 @@ class __$$_HomeStateCopyWithImpl<$Res>
 
 class _$_HomeState extends _HomeState {
   _$_HomeState(
-      {this.weather, this.cityWeather, this.isLoading = true, this.error})
+      {this.openWeather,
+      this.meteoWether,
+      this.tomorrowWeather,
+      this.finalWeather,
+      this.cityWeather,
+      this.isLoading = true,
+      this.error})
       : super._();
 
   @override
-  final Weather? weather;
+  final Weather? openWeather;
+  @override
+  final Weather? meteoWether;
+  @override
+  final Weather? tomorrowWeather;
+  @override
+  final Weather? finalWeather;
   @override
   final Weather? cityWeather;
   @override
@@ -468,7 +696,7 @@ class _$_HomeState extends _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(weather: $weather, cityWeather: $cityWeather, isLoading: $isLoading, error: $error)';
+    return 'HomeState(openWeather: $openWeather, meteoWether: $meteoWether, tomorrowWeather: $tomorrowWeather, finalWeather: $finalWeather, cityWeather: $cityWeather, isLoading: $isLoading, error: $error)';
   }
 
   @override
@@ -476,7 +704,14 @@ class _$_HomeState extends _HomeState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_HomeState &&
-            (identical(other.weather, weather) || other.weather == weather) &&
+            (identical(other.openWeather, openWeather) ||
+                other.openWeather == openWeather) &&
+            (identical(other.meteoWether, meteoWether) ||
+                other.meteoWether == meteoWether) &&
+            (identical(other.tomorrowWeather, tomorrowWeather) ||
+                other.tomorrowWeather == tomorrowWeather) &&
+            (identical(other.finalWeather, finalWeather) ||
+                other.finalWeather == finalWeather) &&
             (identical(other.cityWeather, cityWeather) ||
                 other.cityWeather == cityWeather) &&
             (identical(other.isLoading, isLoading) ||
@@ -485,8 +720,8 @@ class _$_HomeState extends _HomeState {
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, weather, cityWeather, isLoading, error);
+  int get hashCode => Object.hash(runtimeType, openWeather, meteoWether,
+      tomorrowWeather, finalWeather, cityWeather, isLoading, error);
 
   @JsonKey(ignore: true)
   @override
@@ -497,14 +732,23 @@ class _$_HomeState extends _HomeState {
 
 abstract class _HomeState extends HomeState {
   factory _HomeState(
-      {final Weather? weather,
+      {final Weather? openWeather,
+      final Weather? meteoWether,
+      final Weather? tomorrowWeather,
+      final Weather? finalWeather,
       final Weather? cityWeather,
       final bool isLoading,
       final Error? error}) = _$_HomeState;
   _HomeState._() : super._();
 
   @override
-  Weather? get weather;
+  Weather? get openWeather;
+  @override
+  Weather? get meteoWether;
+  @override
+  Weather? get tomorrowWeather;
+  @override
+  Weather? get finalWeather;
   @override
   Weather? get cityWeather;
   @override

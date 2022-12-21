@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pogodynka/features/src/themes/app_colors.dart';
 import 'package:pogodynka/features/src/widgets/line_separator.dart';
 
 class WeatherConditionCard extends StatelessWidget {
@@ -13,7 +14,7 @@ class WeatherConditionCard extends StatelessWidget {
     return SizedBox(
       height: 100,
       child: Card(
-        color: const Color(0xFF33415E),
+        color: AppColors.cardColor,
         elevation: 0,
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 8.0),

@@ -20,16 +20,16 @@ Weather _$WeatherFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Weather {
-  int get temperature => throw _privateConstructorUsedError;
-  int get condition => throw _privateConstructorUsedError;
-  String get cityName => throw _privateConstructorUsedError;
-  int get minTemp => throw _privateConstructorUsedError;
-  int get maxTemp => throw _privateConstructorUsedError;
-  int get feelTemp => throw _privateConstructorUsedError;
-  int get humidity => throw _privateConstructorUsedError;
-  double get wind => throw _privateConstructorUsedError;
-  int get clouds => throw _privateConstructorUsedError;
-  int get pressure => throw _privateConstructorUsedError;
+  int? get temperature => throw _privateConstructorUsedError;
+  int? get condition => throw _privateConstructorUsedError;
+  String? get cityName => throw _privateConstructorUsedError;
+  int? get minTemp => throw _privateConstructorUsedError;
+  int? get maxTemp => throw _privateConstructorUsedError;
+  int? get feelTemp => throw _privateConstructorUsedError;
+  int? get humidity => throw _privateConstructorUsedError;
+  double? get wind => throw _privateConstructorUsedError;
+  int? get clouds => throw _privateConstructorUsedError;
+  int? get pressure => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,16 +42,16 @@ abstract class $WeatherCopyWith<$Res> {
       _$WeatherCopyWithImpl<$Res, Weather>;
   @useResult
   $Res call(
-      {int temperature,
-      int condition,
-      String cityName,
-      int minTemp,
-      int maxTemp,
-      int feelTemp,
-      int humidity,
-      double wind,
-      int clouds,
-      int pressure});
+      {int? temperature,
+      int? condition,
+      String? cityName,
+      int? minTemp,
+      int? maxTemp,
+      int? feelTemp,
+      int? humidity,
+      double? wind,
+      int? clouds,
+      int? pressure});
 }
 
 /// @nodoc
@@ -67,58 +67,58 @@ class _$WeatherCopyWithImpl<$Res, $Val extends Weather>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? temperature = null,
-    Object? condition = null,
-    Object? cityName = null,
-    Object? minTemp = null,
-    Object? maxTemp = null,
-    Object? feelTemp = null,
-    Object? humidity = null,
-    Object? wind = null,
-    Object? clouds = null,
-    Object? pressure = null,
+    Object? temperature = freezed,
+    Object? condition = freezed,
+    Object? cityName = freezed,
+    Object? minTemp = freezed,
+    Object? maxTemp = freezed,
+    Object? feelTemp = freezed,
+    Object? humidity = freezed,
+    Object? wind = freezed,
+    Object? clouds = freezed,
+    Object? pressure = freezed,
   }) {
     return _then(_value.copyWith(
-      temperature: null == temperature
+      temperature: freezed == temperature
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
-              as int,
-      condition: null == condition
+              as int?,
+      condition: freezed == condition
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
-              as int,
-      cityName: null == cityName
+              as int?,
+      cityName: freezed == cityName
           ? _value.cityName
           : cityName // ignore: cast_nullable_to_non_nullable
-              as String,
-      minTemp: null == minTemp
+              as String?,
+      minTemp: freezed == minTemp
           ? _value.minTemp
           : minTemp // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxTemp: null == maxTemp
+              as int?,
+      maxTemp: freezed == maxTemp
           ? _value.maxTemp
           : maxTemp // ignore: cast_nullable_to_non_nullable
-              as int,
-      feelTemp: null == feelTemp
+              as int?,
+      feelTemp: freezed == feelTemp
           ? _value.feelTemp
           : feelTemp // ignore: cast_nullable_to_non_nullable
-              as int,
-      humidity: null == humidity
+              as int?,
+      humidity: freezed == humidity
           ? _value.humidity
           : humidity // ignore: cast_nullable_to_non_nullable
-              as int,
-      wind: null == wind
+              as int?,
+      wind: freezed == wind
           ? _value.wind
           : wind // ignore: cast_nullable_to_non_nullable
-              as double,
-      clouds: null == clouds
+              as double?,
+      clouds: freezed == clouds
           ? _value.clouds
           : clouds // ignore: cast_nullable_to_non_nullable
-              as int,
-      pressure: null == pressure
+              as int?,
+      pressure: freezed == pressure
           ? _value.pressure
           : pressure // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 }
@@ -131,16 +131,16 @@ abstract class _$$_WeatherCopyWith<$Res> implements $WeatherCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {int temperature,
-      int condition,
-      String cityName,
-      int minTemp,
-      int maxTemp,
-      int feelTemp,
-      int humidity,
-      double wind,
-      int clouds,
-      int pressure});
+      {int? temperature,
+      int? condition,
+      String? cityName,
+      int? minTemp,
+      int? maxTemp,
+      int? feelTemp,
+      int? humidity,
+      double? wind,
+      int? clouds,
+      int? pressure});
 }
 
 /// @nodoc
@@ -153,58 +153,58 @@ class __$$_WeatherCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? temperature = null,
-    Object? condition = null,
-    Object? cityName = null,
-    Object? minTemp = null,
-    Object? maxTemp = null,
-    Object? feelTemp = null,
-    Object? humidity = null,
-    Object? wind = null,
-    Object? clouds = null,
-    Object? pressure = null,
+    Object? temperature = freezed,
+    Object? condition = freezed,
+    Object? cityName = freezed,
+    Object? minTemp = freezed,
+    Object? maxTemp = freezed,
+    Object? feelTemp = freezed,
+    Object? humidity = freezed,
+    Object? wind = freezed,
+    Object? clouds = freezed,
+    Object? pressure = freezed,
   }) {
     return _then(_$_Weather(
-      temperature: null == temperature
+      temperature: freezed == temperature
           ? _value.temperature
           : temperature // ignore: cast_nullable_to_non_nullable
-              as int,
-      condition: null == condition
+              as int?,
+      condition: freezed == condition
           ? _value.condition
           : condition // ignore: cast_nullable_to_non_nullable
-              as int,
-      cityName: null == cityName
+              as int?,
+      cityName: freezed == cityName
           ? _value.cityName
           : cityName // ignore: cast_nullable_to_non_nullable
-              as String,
-      minTemp: null == minTemp
+              as String?,
+      minTemp: freezed == minTemp
           ? _value.minTemp
           : minTemp // ignore: cast_nullable_to_non_nullable
-              as int,
-      maxTemp: null == maxTemp
+              as int?,
+      maxTemp: freezed == maxTemp
           ? _value.maxTemp
           : maxTemp // ignore: cast_nullable_to_non_nullable
-              as int,
-      feelTemp: null == feelTemp
+              as int?,
+      feelTemp: freezed == feelTemp
           ? _value.feelTemp
           : feelTemp // ignore: cast_nullable_to_non_nullable
-              as int,
-      humidity: null == humidity
+              as int?,
+      humidity: freezed == humidity
           ? _value.humidity
           : humidity // ignore: cast_nullable_to_non_nullable
-              as int,
-      wind: null == wind
+              as int?,
+      wind: freezed == wind
           ? _value.wind
           : wind // ignore: cast_nullable_to_non_nullable
-              as double,
-      clouds: null == clouds
+              as double?,
+      clouds: freezed == clouds
           ? _value.clouds
           : clouds // ignore: cast_nullable_to_non_nullable
-              as int,
-      pressure: null == pressure
+              as int?,
+      pressure: freezed == pressure
           ? _value.pressure
           : pressure // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -214,39 +214,39 @@ class __$$_WeatherCopyWithImpl<$Res>
 class _$_Weather implements _Weather {
   const _$_Weather(
       {required this.temperature,
-      required this.condition,
-      required this.cityName,
-      required this.minTemp,
-      required this.maxTemp,
-      required this.feelTemp,
-      required this.humidity,
-      required this.wind,
-      required this.clouds,
-      required this.pressure});
+      this.condition,
+      this.cityName,
+      this.minTemp,
+      this.maxTemp,
+      this.feelTemp,
+      this.humidity,
+      this.wind,
+      this.clouds,
+      this.pressure});
 
   factory _$_Weather.fromJson(Map<String, dynamic> json) =>
       _$$_WeatherFromJson(json);
 
   @override
-  final int temperature;
+  final int? temperature;
   @override
-  final int condition;
+  final int? condition;
   @override
-  final String cityName;
+  final String? cityName;
   @override
-  final int minTemp;
+  final int? minTemp;
   @override
-  final int maxTemp;
+  final int? maxTemp;
   @override
-  final int feelTemp;
+  final int? feelTemp;
   @override
-  final int humidity;
+  final int? humidity;
   @override
-  final double wind;
+  final double? wind;
   @override
-  final int clouds;
+  final int? clouds;
   @override
-  final int pressure;
+  final int? pressure;
 
   @override
   String toString() {
@@ -297,39 +297,39 @@ class _$_Weather implements _Weather {
 
 abstract class _Weather implements Weather {
   const factory _Weather(
-      {required final int temperature,
-      required final int condition,
-      required final String cityName,
-      required final int minTemp,
-      required final int maxTemp,
-      required final int feelTemp,
-      required final int humidity,
-      required final double wind,
-      required final int clouds,
-      required final int pressure}) = _$_Weather;
+      {required final int? temperature,
+      final int? condition,
+      final String? cityName,
+      final int? minTemp,
+      final int? maxTemp,
+      final int? feelTemp,
+      final int? humidity,
+      final double? wind,
+      final int? clouds,
+      final int? pressure}) = _$_Weather;
 
   factory _Weather.fromJson(Map<String, dynamic> json) = _$_Weather.fromJson;
 
   @override
-  int get temperature;
+  int? get temperature;
   @override
-  int get condition;
+  int? get condition;
   @override
-  String get cityName;
+  String? get cityName;
   @override
-  int get minTemp;
+  int? get minTemp;
   @override
-  int get maxTemp;
+  int? get maxTemp;
   @override
-  int get feelTemp;
+  int? get feelTemp;
   @override
-  int get humidity;
+  int? get humidity;
   @override
-  double get wind;
+  double? get wind;
   @override
-  int get clouds;
+  int? get clouds;
   @override
-  int get pressure;
+  int? get pressure;
   @override
   @JsonKey(ignore: true)
   _$$_WeatherCopyWith<_$_Weather> get copyWith =>

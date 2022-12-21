@@ -5,11 +5,11 @@ import 'package:pogodynka/services/models/location/location.dart';
 import 'package:pogodynka/services/models/weather/weather.dart';
 
 @injectable
-class GetWeatherByLocationUseCase{
-  GetWeatherByLocationUseCase(this._apiService);
+class GetWeatherByLocationOpenWeatherUseCase{
+  GetWeatherByLocationOpenWeatherUseCase(this._apiService);
   final ApiService _apiService;
 
   Future<Either<Error, Weather>> call(Location location) async =>
-      (await _apiService.getWeatherByLocation(location));
+      (await _apiService.getWeatherByLocationOpenWeather(location));
 
 }

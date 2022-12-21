@@ -23,10 +23,10 @@ class CityWeatherBottomSheet extends StatelessWidget {
             onChanged: onCityNameChange,
             hintText: 'Podaj nazwe miasta',
           ),
-          SizedBox(height: 25,),
+          const SizedBox(height: 25,),
           ElevatedButton(
               onPressed: onCheckForCityPressed,
-              child: Text('Sprawdź')
+              child: const Text('Sprawdź')
           ),
         ],
       ),

@@ -26,22 +26,15 @@ class AppColors extends ColorSwatch<int> {
   Color get shade05 => this[05]!;
 
   static const Color white = Color(0xFFFFFFFF);
-  static const Color almostWhite = Color(0xFFF9F9F9);
+  static const Color almostWhite = Colors.white70;
   static const Color black = Color(0xFF000000);
   static const Color separator = Color(0xFFC4C4C4);
-  static const Color backgroundColor = Color(0xFFebecee);
+  static const Color backgroundColor = Color(0xFF243657);
+  static const Color cardColor = Color(0xFF33415E);
   // static const Color backgroundColor = Color(0xFFefeff1);
   static const Color customBlack = Color(0xFF2C2C2C);
   static const Color semiBlack = Color(0x802C2C2C);
-  static const Color textGrey = Color(0xFF959595);
-  static const Color navigationBarColor = Color(0xffF8F9FD);
-  static const Color redDot = Color(0xFFFC5353);
-  static const Color viewRestaurantTextColor = Color(0xFF262A2D);
-  static const Color modifierSelected = Color(0xFF61AAFF);
-
-  static const Color editProfileButtonColor = Color(0xFFe9ebee);
-
-  static const Color backButtonTransparent = Color(0x80E9EBEF);
+  static const Color appBlue = Color(0xFF61AAFF);
 
   /// Default shade is: shade50
   static const AppColors primary = AppColors(

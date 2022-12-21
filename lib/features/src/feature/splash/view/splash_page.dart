@@ -28,7 +28,7 @@ class _SplashPageState extends State<SplashPage> {
         bloc: _bloc,
         builder: (context, state) {
           if (state.isLoading == false){
-            return HomePage();
+            return const HomePage();
           }
           return const SplashView();
         }

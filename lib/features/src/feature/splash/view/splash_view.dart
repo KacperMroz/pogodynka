@@ -43,15 +43,15 @@ class _SplashViewState extends State<SplashView>
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SizedBox(height: 100,),
+          const SizedBox(height: 100,),
           Hero(
             tag: 'logo',
             child: SizedBox(
-              child: Image.asset('assets/weather_logo.png'),
               height: animation.value * 200,
+              child: Image.asset('assets/weather_logo.png'),
             ),
           ),
-          SizedBox(height: 50,),
+          const SizedBox(height: 50,),
           Center(
             child: AnimatedTextKit(
               animatedTexts: [

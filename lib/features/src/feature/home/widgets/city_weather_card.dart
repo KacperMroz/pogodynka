@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pogodynka/features/src/feature/home/bloc/home_bloc.dart';
 import 'package:pogodynka/features/src/injection/injection.dart';
+import 'package:pogodynka/features/src/themes/app_colors.dart';
 import 'package:pogodynka/services/models/weather/weather.dart';
 
 class CityWeatherCard extends StatelessWidget {
@@ -16,11 +17,11 @@ class CityWeatherCard extends StatelessWidget {
     if (cityWeather != null) {
       return _CityWeatherCard(
         onCityPressed: onCityPressed,
-        cityName: cityWeather!.cityName,
+        cityName: cityWeather!.cityName!,
         icon: getIt.get<HomeBloc>().state.getWeatherIcon(cityWeather!),
-        temperature: cityWeather!.temperature,
-        feelTemperature: cityWeather!.feelTemp,
-        clouds: cityWeather!.clouds,
+        temperature: cityWeather!.temperature!,
+        feelTemperature: cityWeather!.feelTemp!,
+        clouds: cityWeather!.clouds!,
       );
     }
     return _EmptyCityWeatherCard(
@@ -54,7 +55,7 @@ class _CityWeatherCard extends StatelessWidget {
       child: SizedBox(
         height: 100,
         child: Card(
-          color: const Color(0xFF33415E),
+          color: AppColors.cardColor,
           elevation: 0,
           child: Padding(
             padding: const EdgeInsets.all(8.0),
@@ -70,7 +71,7 @@ class _CityWeatherCard extends StatelessWidget {
                         style: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
-                          color: Colors.white70,
+                          color: AppColors.almostWhite,
                         ),
                       ),
                       const SizedBox(width: 10,),
@@ -92,14 +93,14 @@ class _CityWeatherCard extends StatelessWidget {
                         const Text(
                           'Temperatura',
                           style: TextStyle(
-                              color: Colors.white70
+                              color: AppColors.almostWhite
                           ),
                         ),
                         const SizedBox(height: 5,),
                         Text(
                             '$temperature°',
                           style: const TextStyle(
-                              color: Colors.white70
+                              color: AppColors.almostWhite,
                           ),
                         ),
                       ],
@@ -109,14 +110,14 @@ class _CityWeatherCard extends StatelessWidget {
                         const Text(
                           'Odczuwalna ',
                           style: TextStyle(
-                              color: Colors.white70
+                              color: AppColors.almostWhite
                           ),
                         ),
                         const SizedBox(height: 5,),
                         Text(
                           '$feelTemperature°',
                           style: const TextStyle(
-                              color: Colors.white70
+                              color: AppColors.almostWhite
                           ),
                         ),
                       ],
@@ -126,14 +127,14 @@ class _CityWeatherCard extends StatelessWidget {
                         const Text(
                           'Zachmurzenie ',
                           style: TextStyle(
-                              color: Colors.white70
+                              color: AppColors.almostWhite
                           ),
                         ),
                         const SizedBox(height: 5,),
                         Text(
                           '$clouds%',
                           style: const TextStyle(
-                              color: Colors.white70
+                              color: AppColors.almostWhite
                           ),
                         ),
                       ],

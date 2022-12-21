@@ -75,7 +75,7 @@ class _AppTextInputState extends State<AppTextInput> {
   @override
   Widget build(BuildContext context) {
     componentsColor = widget.errorText != null
-        ? Colors.red
+        ? AppColors.error
         : _isFocused
         ? AppColors.secondary
         : AppColors.neutral.shade90;

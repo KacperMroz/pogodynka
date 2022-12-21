@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:injectable/injectable.dart';
 import 'package:pogodynka/services/location_service/location_service_base.dart';
 import 'package:pogodynka/services/models/location/location.dart';
@@ -25,6 +26,7 @@ class LocationServiceImpl extends LocationService{
       desiredAccuracy: LocationAccuracy.low,
     );
     Location location = Location(position.latitude, position.longitude);
+    debugPrint('${location.latitude}, ${location.longitude}');
     return right(location);
   }
 

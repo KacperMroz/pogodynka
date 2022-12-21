@@ -13,7 +13,7 @@ const MapURL = 'http://api.openweathermap.org/data/2.5/weather';
 class ApiServiceImpl extends ApiService {
 
   @override
-  Future<Either<Error, Weather>> getWeatherByLocation(Location location) async {
+  Future<Either<Error, Weather>> getWeatherByLocationOpenWeather(Location location) async {
     http.Response response = await http.get(
         Uri.parse('$MapURL?lat=${location.latitude}&lon=${location
             .longitude}&appid=$apiKey&units=metric')
@@ -43,6 +43,7 @@ class ApiServiceImpl extends ApiService {
         clouds: clouds,
         pressure: pressure,
       );
+      print('OpenWeather: \n${weather.toString()}\n');
       return right(weather);
     } else {
       return left(Error());
@@ -78,6 +79,54 @@ class ApiServiceImpl extends ApiService {
         clouds: clouds,
         pressure: pressure,
       );
+      return right(weather);
+    } else {
+      return left(Error());
+    }
+  }
+
+  @override
+  Future<Either<Error, Weather>> getWeatherByLocationOpenMeteo(Location location) async {
+    http.Response response = await http.get(
+        Uri.parse('https://api.open-meteo.com/v1/forecast?latitude=${location.latitude}&longitude=${location.longitude}&current_weather=true&timezone=Europe%2FBerlin')
+    );
+    if (response.statusCode == 200) {
+      String data = response.body;
+      var decodedData = jsonDecode(data);
+      int temperature = decodedData['current_weather']['temperature'].toInt();
+      double wind = decodedData['current_weather']['windspeed'];
+      Weather weather = Weather(
+        temperature: temperature,
+        wind: wind,
+      );
+      print('OpenMeteo: \n${weather.toString()}\n');
+      return right(weather);
+    } else {
+      return left(Error());
+    }
+  }
+
+  @override
+  Future<Either<Error, Weather>> getWeatherByLocationTomorrowApi(Location location) async {
+    http.Response response = await http.get(
+        Uri.parse('https://api.tomorrow.io/v4/timelines?location=${location.latitude},${location.longitude}&fields=temperature,temperatureApparent,windSpeed,humidity,pressureSurfaceLevel&timesteps=current&units=metric&apikey=mHgMhJCsft9Wismz8TCut3DTtpq3Esb4')
+    );
+    if (response.statusCode == 200) {
+      String data = response.body;
+      var decodedData = jsonDecode(data);
+      int temperature = decodedData['data']['timelines'][0]['intervals'][0]['values']['temperature'].toInt();
+      double wind = decodedData['data']['timelines'][0]['intervals'][0]['values']['windSpeed'];
+      int humidity = decodedData['data']['timelines'][0]['intervals'][0]['values']['humidity'].toInt();
+      int feelTemp = decodedData['data']['timelines'][0]['intervals'][0]['values']['temperatureApparent'].toInt();
+      int pressure = decodedData['data']['timelines'][0]['intervals'][0]['values']['pressureSurfaceLevel'].toInt();
+      Weather weather = Weather(
+        temperature: temperature,
+        wind: wind,
+        humidity: humidity,
+        feelTemp: feelTemp,
+        pressure: pressure,
+      );
+      print('Tomorrow.io: \n${weather.toString()}\n');
       return right(weather);
     } else {
       return left(Error());

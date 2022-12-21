@@ -35,7 +35,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState>{
   Future<void> getNewLocation() async {
     (await _getLocationUseCase()).fold(
           (error) => print('error'),
-          (location) => print('${location.longitude} ${location.latitude}'),
+          (location) => emit(SplashState.success(location)),
     );
   }
 
